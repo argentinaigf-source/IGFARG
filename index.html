@@ -38,7 +38,6 @@
         .hover\:bg-primary-dark:hover { background-color: #04568a; }
         .bg-footer { background-color: #023c5d; }
 
-
         /* Animación suave para scroll */
         html {
             scroll-behavior: smooth;
@@ -64,8 +63,7 @@
             transition: all 200ms ease-in;
         }
 
-        /* --- ESTILOS IMPORTADOS PARA SECCIÓN APOYAN --- */
-        /* Estilos de Logos Aliados - Tamaño base y ajustes específicos */
+        /* --- ESTILOS PARA SECCIÓN APOYAN --- */
         .ally-logo {
             height: 40px; /* Altura base */
             width: auto;
@@ -74,7 +72,7 @@
             padding: 2px;
             margin: 0.5rem; 
         }
-        /* Ajustes específicos de tamaño según solicitud */
+        /* Ajustes específicos de tamaño según jerarquía */
         .ally-logo-x1-2 { height: 48px; } /* +20% (ISOC) */
         .ally-logo-x1-5 { height: 60px; } /* +50% (Securinate, MUBIT, UBA, Pilar) */
         .ally-logo-x1-6 { height: 64px; } /* +60% (SSIG) */
@@ -82,14 +80,14 @@
         .ally-logo-x3 { height: 120px; } /* Triplicar (PrivaIA) */
         
         /* Ajuste de posición vertical */
-        .translate-y-1cm { transform: translateY(10px); } /* Aprox 1cm visual en pantalla */
+        .translate-y-1cm { transform: translateY(10px); }
 
-        /* --- ESTILOS DEL FLYER (Speaker Image) --- */
+        /* --- ESTILOS DEL FLYER / PARTICIPANTES --- */
         .speaker-img {
-            width: 80px; /* Tamaño de la foto */
+            width: 80px;
             height: 80px;
             border-radius: 50%;
-            background-color: #e5e7eb; /* Gris placeholder */
+            background-color: #e5e7eb;
             object-fit: cover;
             margin-bottom: 0.5rem;
             border: 3px solid #f3f4f6;
@@ -98,33 +96,37 @@
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 text-gray-800 antialiased">
 
     <!-- Header -->
     <header class="bg-primary text-white shadow-lg sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <div class="flex items-center">
                 <!-- Logo / Banner IGF Argentina -->
-                <img src="baner horizontal_0.png" alt="Banner IGF Argentina" class="h-12 md:h-14 w-auto object-contain">
+                <img src="baner horizontal_0.png" onerror="this.onerror=null;this.src='https://placehold.co/240x60/0569a5/FFFFFF?text=IGF+Argentina';" alt="Banner IGF Argentina" class="h-12 md:h-14 w-auto object-contain">
             </div>
-            <div class="hidden md:flex items-center space-x-6">
+            <div class="hidden md:flex items-center space-x-6 font-medium">
                 <a href="#inicio" class="hover:text-gray-300 transition">Inicio</a>
                 <a href="#agenda-2026" class="hover:text-cyan-200 transition font-bold text-cyan-300 flex items-center gap-1.5">
                     <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span> Edición 2026
                 </a>
+                <a href="#comite" class="hover:text-gray-300 transition">Comité</a>
+                <a href="#ejes" class="hover:text-gray-300 transition">Ejes</a>
                 <a href="#contacto" class="hover:text-gray-300 transition">Contacto</a>
             </div>
             <div class="md:hidden">
-                <button id="menu-btn" class="text-white hover:text-gray-300 focus:outline-none">
+                <button id="menu-btn" aria-label="Abrir menú" class="text-white hover:text-gray-300 focus:outline-none p-2">
                     <i class="fas fa-bars fa-lg"></i>
                 </button>
             </div>
         </nav>
         <!-- Menú Móvil -->
-        <div id="mobile-menu" class="md:hidden hidden bg-primary">
-            <a href="#inicio" class="block py-2 px-4 text-sm hover:bg-primary-dark transition">Inicio</a>
-            <a href="#agenda-2026" class="block py-2 px-4 text-sm font-bold text-cyan-300 hover:bg-primary-dark transition">Edición 2026</a>
-            <a href="#contacto" class="block py-2 px-4 text-sm hover:bg-primary-dark transition">Contacto</a>
+        <div id="mobile-menu" class="md:hidden hidden bg-primary border-t border-white/10">
+            <a href="#inicio" class="block py-2.5 px-6 text-sm hover:bg-primary-dark transition">Inicio</a>
+            <a href="#agenda-2026" class="block py-2.5 px-6 text-sm font-bold text-cyan-300 hover:bg-primary-dark transition">Edición 2026</a>
+            <a href="#comite" class="block py-2.5 px-6 text-sm hover:bg-primary-dark transition">Comité</a>
+            <a href="#ejes" class="block py-2.5 px-6 text-sm hover:bg-primary-dark transition">Ejes Temáticos</a>
+            <a href="#contacto" class="block py-2.5 px-6 text-sm hover:bg-primary-dark transition">Contacto</a>
         </div>
     </header>
 
@@ -133,7 +135,7 @@
         <section id="inicio" class="bg-primary text-white">
             <div class="container mx-auto px-6 py-24 text-center">
                 <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Foro de Gobernanza de Internet</h1>
-                <p class="mt-4 text-xl md:text-2xl font-light">Un espacio de diálogo multisectorial, abierto e inclusivo para el futuro de Internet en Argentina.</p>
+                <p class="mt-4 text-xl md:text-2xl font-light max-w-3xl mx-auto">Un espacio de diálogo multisectorial, abierto e inclusivo para el futuro de Internet en Argentina.</p>
                 <div class="mt-8 flex flex-wrap justify-center gap-4">
                     <a href="#comite" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-primary transition transform hover:scale-105">
                         Conocé al comité
@@ -221,7 +223,7 @@
 
                 </div>
 
-                <!-- BLOQUES AMPLIADOS EN PARALELO (SIDE-BY-SIDE): TRACK PARLAMENTARIO & TRACK JUVENTUD -->
+                <!-- BLOQUES AMPLIADOS EN PARALELO: TRACK PARLAMENTARIO & TRACK JUVENTUD -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mb-12">
                     
                     <!-- Tarjeta Grande 1: Track Parlamentario Convocatoria -->
@@ -357,22 +359,22 @@
                 
                 <!-- Primera Fila de Logos -->
                 <div class="flex flex-wrap justify-center items-center gap-6 mb-6">
-                    <img src="Logo CABASE 1080x1080_page-0001.jpg" onerror="this.src='https://placehold.co/80x40?text=CABASE'" alt="CABASE" class="ally-logo ally-logo-x2">
-                    <img src="ISOC LOGO.png" onerror="this.src='https://placehold.co/48x40?text=ISOC'" alt="ISOC" class="ally-logo ally-logo-x1-2 translate-y-1cm">
-                    <img src="lacnic-logo-150dpi.png" onerror="this.src='https://placehold.co/80x40?text=LACNIC'" alt="LACNIC" class="ally-logo ally-logo-x2">
-                    <img src="CETyS-UdeSA-COLOR.jpg" onerror="this.src='https://placehold.co/80x40?text=CETyS'" alt="CETyS" class="ally-logo ally-logo-x2">
-                    <img src="Logo ADS Color_1.png" onerror="this.src='https://placehold.co/40x40?text=ADS'" alt="Asuntos del Sur" class="ally-logo">
-                    <img src="SSIG-LOGO.jpg" onerror="this.src='https://placehold.co/64x40?text=SSIG'" alt="SSIG" class="ally-logo ally-logo-x1-6">
+                    <img src="Logo CABASE 1080x1080_page-0001.jpg" onerror="this.onerror=null;this.src='https://placehold.co/120x60/F3F4F6/0569a5?text=CABASE'" alt="CABASE" class="ally-logo ally-logo-x2">
+                    <img src="ISOC LOGO.png" onerror="this.onerror=null;this.src='https://placehold.co/100x50/F3F4F6/0569a5?text=ISOC'" alt="ISOC" class="ally-logo ally-logo-x1-2 translate-y-1cm">
+                    <img src="lacnic-logo-150dpi.png" onerror="this.onerror=null;this.src='https://placehold.co/120x60/F3F4F6/0569a5?text=LACNIC'" alt="LACNIC" class="ally-logo ally-logo-x2">
+                    <img src="CETyS-UdeSA-COLOR.jpg" onerror="this.onerror=null;this.src='https://placehold.co/120x60/F3F4F6/0569a5?text=CETyS'" alt="CETyS" class="ally-logo ally-logo-x2">
+                    <img src="Logo ADS Color_1.png" onerror="this.onerror=null;this.src='https://placehold.co/100x50/F3F4F6/0569a5?text=ADS'" alt="Asuntos del Sur" class="ally-logo">
+                    <img src="SSIG-LOGO.jpg" onerror="this.onerror=null;this.src='https://placehold.co/110x55/F3F4F6/0569a5?text=SSIG'" alt="SSIG" class="ally-logo ally-logo-x1-6">
                 </div>
 
                 <!-- Segunda Fila de Logos -->
                 <div class="flex flex-wrap justify-center items-center gap-6 mb-6">
-                    <img src="uba.png" onerror="this.src='https://placehold.co/60x40?text=UBA'" alt="UBA" class="ally-logo ally-logo-x1-5">
-                    <img src="logo-privaia-azul-fondo-blanco.png" onerror="this.src='https://placehold.co/120x40?text=PrivaIA'" alt="PrivaIA" class="ally-logo ally-logo-x3">
-                    <img src="MUBIT_logoalt_negro (1).png" onerror="this.src='https://placehold.co/60x40?text=MUBIT'" alt="MUBIT" class="ally-logo ally-logo-x1-5">
-                    <img src="Logo_UNSO.jpeg" onerror="this.src='https://placehold.co/40x40?text=UNSO'" alt="UNSO" class="ally-logo">
-                    <img src="Logo_Securinate_Tech_Solutionsn.jpg" onerror="this.src='https://placehold.co/60x40?text=Securinate'" alt="Securinate" class="ally-logo ally-logo-x1-5">
-                    <img src="munipilar.png" onerror="this.src='https://placehold.co/60x40?text=Pilar'" alt="Pilar" class="ally-logo ally-logo-x1-5">
+                    <img src="uba.png" onerror="this.onerror=null;this.src='https://placehold.co/100x50/F3F4F6/0569a5?text=UBA'" alt="UBA" class="ally-logo ally-logo-x1-5">
+                    <img src="logo-privaia-azul-fondo-blanco.png" onerror="this.onerror=null;this.src='https://placehold.co/150x60/F3F4F6/0569a5?text=PrivaIA'" alt="PrivaIA" class="ally-logo ally-logo-x3">
+                    <img src="MUBIT_logoalt_negro (1).png" onerror="this.onerror=null;this.src='https://placehold.co/100x50/F3F4F6/0569a5?text=MUBIT'" alt="MUBIT" class="ally-logo ally-logo-x1-5">
+                    <img src="Logo_UNSO.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/100x50/F3F4F6/0569a5?text=UNSO'" alt="UNSO" class="ally-logo">
+                    <img src="Logo_Securinate_Tech_Solutionsn.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x50/F3F4F6/0569a5?text=Securinate'" alt="Securinate" class="ally-logo ally-logo-x1-5">
+                    <img src="munipilar.png" onerror="this.onerror=null;this.src='https://placehold.co/100x50/F3F4F6/0569a5?text=Pilar'" alt="Pilar" class="ally-logo ally-logo-x1-5">
                 </div>
             </div>
         </section>
@@ -483,42 +485,42 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <!-- Video 1 -->
                         <div class="flex flex-col space-y-2">
-                            <div class="aspect-video rounded-lg overflow-hidden shadow-lg border-4 border-white">
+                            <div class="aspect-video rounded-lg overflow-hidden shadow-lg border-4 border-white bg-black">
                                 <iframe class="w-full h-full" src="https://www.youtube.com/embed/YliIMYbWJos" title="Jornada apertura del relanzamiento de IGF Argentina" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <h3 class="text-sm font-bold text-gray-700 text-center">Jornada apertura del relanzamiento de IGF Argentina</h3>
                         </div>
                         <!-- Video 2 -->
                         <div class="flex flex-col space-y-2">
-                            <div class="aspect-video rounded-lg overflow-hidden shadow-lg border-4 border-white">
+                            <div class="aspect-video rounded-lg overflow-hidden shadow-lg border-4 border-white bg-black">
                                 <iframe class="w-full h-full" src="https://www.youtube.com/embed/aQ3MDG1NHTc" title="Webinar sobre IA: impacto económico y regulatorio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <h3 class="text-sm font-bold text-gray-700 text-center">Webinar sobre IA: impacto económico y regulatorio</h3>
                         </div>
                         <!-- Video 3 -->
                         <div class="flex flex-col space-y-2">
-                            <div class="aspect-video rounded-lg overflow-hidden shadow-lg border-4 border-white">
+                            <div class="aspect-video rounded-lg overflow-hidden shadow-lg border-4 border-white bg-black">
                                 <iframe class="w-full h-full" src="https://www.youtube.com/embed/l3LZvcPzDpY" title="Webinar sobre gobernanza de datos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <h3 class="text-sm font-bold text-gray-700 text-center">Webinar sobre gobernanza de datos</h3>
                         </div>
                         <!-- Video 4 -->
                         <div class="flex flex-col space-y-2">
-                            <div class="aspect-video rounded-lg overflow-hidden shadow-lg border-4 border-white">
+                            <div class="aspect-video rounded-lg overflow-hidden shadow-lg border-4 border-white bg-black">
                                 <iframe class="w-full h-full" src="https://www.youtube.com/embed/_-IdH-sCedE" title="Webinar sobre tecnologías emergentes e innovación" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <h3 class="text-sm font-bold text-gray-700 text-center">Webinar sobre tecnologías emergentes e innovación</h3>
                         </div>
                         <!-- Video 5 -->
                         <div class="flex flex-col space-y-2">
-                            <div class="aspect-video rounded-lg overflow-hidden shadow-lg border-4 border-white">
+                            <div class="aspect-video rounded-lg overflow-hidden shadow-lg border-4 border-white bg-black">
                                 <iframe class="w-full h-full" src="https://www.youtube.com/embed/z3lkUdReyRM" title="Webinar sobre ciberseguridad y confianza" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <h3 class="text-sm font-bold text-gray-700 text-center">Webinar sobre ciberseguridad y confianza</h3>
                         </div>
                         <!-- Video 6 -->
                         <div class="flex flex-col space-y-2">
-                            <div class="aspect-video rounded-lg overflow-hidden shadow-lg border-4 border-white">
+                            <div class="aspect-video rounded-lg overflow-hidden shadow-lg border-4 border-white bg-black">
                                 <iframe class="w-full h-full" src="https://www.youtube.com/embed/MseCVRFnZYs" title="Evento presencial completo en HCDN" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <h3 class="text-sm font-bold text-gray-700 text-center">Evento presencial completo en HCDN</h3>
@@ -543,228 +545,228 @@
                         </div>
 
                         <!-- Grilla de Nombres con Fotos -->
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-2 text-xs text-center">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 text-xs text-center">
                             
-                            <!-- GRUPO PRIORITARIO (COMITÉ) - Orden Alfabético -->
+                            <!-- GRUPO COMITÉ -->
                             
                             <!-- 1. Birarda, Carina -->
                             <div class="flex flex-col items-center">
-                                <img src="carinab.jpeg" onerror="this.src='https://placehold.co/80?text=CB'" alt="Carina Birarda" class="speaker-img">
+                                <img src="carinab.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=CB'" alt="Carina Birarda" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Carina Birarda</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">CISO Securinate</p>
                             </div>
                             <!-- 2. Brizio, Agustina -->
                             <div class="flex flex-col items-center">
-                                <img src="agustinab.jpeg" onerror="this.src='https://placehold.co/80?text=AB'" alt="Agustina Brizio" class="speaker-img">
+                                <img src="agustinab.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=AB'" alt="Agustina Brizio" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Agustina Brizio</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Asuntos del Sur</p>
                             </div>
                             <!-- 3. Carrasco Pini, Gonzalo -->
                             <div class="flex flex-col items-center">
-                                <img src="gonzaloc.jpeg" onerror="this.src='https://placehold.co/80?text=GC'" alt="Gonzalo Carrasco Pini" class="speaker-img">
+                                <img src="gonzaloc.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=GC'" alt="Gonzalo Carrasco Pini" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Gonzalo Carrasco Pini</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Privaia</p>
                             </div>
                             <!-- 4. Cavalli, Olga -->
                             <div class="flex flex-col items-center">
-                                <img src="olgac.jpeg" onerror="this.src='https://placehold.co/80?text=OC'" alt="Olga Cavalli" class="speaker-img">
+                                <img src="olgac.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=OC'" alt="Olga Cavalli" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Olga Cavalli</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Decana Fac. Defensa Nac. Arg.</p>
                             </div>
 
                             <!-- 5. Gomez Gonzalez, Sofía -->
                             <div class="flex flex-col items-center">
-                                <img src="gomezgonzalez.jpeg" onerror="this.src='https://placehold.co/80?text=SG'" alt="Sofía Gomez Gonzalez" class="speaker-img">
+                                <img src="gomezgonzalez.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=SG'" alt="Sofía Gomez Gonzalez" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Sofía Gomez Gonzalez</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Municipalidad de Pilar</p>
                             </div>
                             <!-- 6. Lescano, Esteban -->
                             <div class="flex flex-col items-center">
-                                <img src="estebanl.jpg" onerror="this.src='https://placehold.co/80?text=EL'" alt="Esteban Lescano" class="speaker-img">
+                                <img src="estebanl.jpg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=EL'" alt="Esteban Lescano" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Esteban Lescano</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">CABASE</p>
                             </div>
                             <!-- 7. Martínez, Fernanda -->
                             <div class="flex flex-col items-center">
-                                <img src="fernandam.jpg" onerror="this.src='https://placehold.co/80?text=FM'" alt="Fernanda Martínez" class="speaker-img">
+                                <img src="fernandam.jpg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=FM'" alt="Fernanda Martínez" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Fernanda Martínez</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">CETyS de UdeSA</p>
                             </div>
                             <!-- 8. Mercado, Gabriel -->
                             <div class="flex flex-col items-center">
-                                <img src="mercado.jpeg" onerror="this.src='https://placehold.co/80?text=GM'" alt="Gabriel Mercado" class="speaker-img">
+                                <img src="mercado.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=GM'" alt="Gabriel Mercado" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Gabriel Mercado</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Sec. de Innovación, Ciencia y Tec.</p>
                             </div>
                             <!-- 9. Ordoñez, Agustina -->
                             <div class="flex flex-col items-center">
-                                <img src="agustinao.jpeg" onerror="this.src='https://placehold.co/80?text=AO'" alt="Agustina Ordoñez" class="speaker-img">
+                                <img src="agustinao.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=AO'" alt="Agustina Ordoñez" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Agustina Ordoñez</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Coordinadora</p>
                             </div>
                             <!-- 10. Rivero, Silvana -->
                             <div class="flex flex-col items-center">
-                                <img src="rivero.jpeg" onerror="this.src='https://placehold.co/80?text=SR'" alt="Silvana Rivero" class="speaker-img">
+                                <img src="rivero.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=SR'" alt="Silvana Rivero" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Silvana Rivero</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">CABASE</p>
                             </div>
                             <!-- 11. Vázquez, Gonzalo J. -->
                             <div class="flex flex-col items-center">
-                                <img src="gonzalov.jpeg" onerror="this.src='https://placehold.co/80?text=GV'" alt="Gonzalo Javier Vázquez" class="speaker-img">
+                                <img src="gonzalov.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=GV'" alt="Gonzalo Javier Vázquez" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Gonzalo J. Vázquez</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">UBA Derecho</p>
                             </div>
                             <!-- 12. Yeza, Martín -->
                             <div class="flex flex-col items-center">
-                                <img src="martiny.jpeg" onerror="this.src='https://placehold.co/80?text=MY'" alt="Martin Yeza" class="speaker-img">
+                                <img src="martiny.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=MY'" alt="Martin Yeza" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Diputado Martin Yeza</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Diputado de la Nación</p>
                             </div>
 
-                            <!-- GRUPO RESTANTE - Orden Alfabético -->
+                            <!-- GRUPO RESTANTE -->
 
-                            <!-- 1. Aginsky, Ariel -->
+                            <!-- 13. Aginsky, Ariel -->
                             <div class="flex flex-col items-center">
-                                <img src="aginsky.jpeg" onerror="this.src='https://placehold.co/80?text=AA'" alt="Ariel Aginsky" class="speaker-img">
+                                <img src="aginsky.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=AA'" alt="Ariel Aginsky" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Ariel Aginsky</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">SGS World Legaltech</p>
                             </div>
 
-                            <!-- 2. Bericua, Marina -->
+                            <!-- 14. Bericua, Marina -->
                             <div class="flex flex-col items-center">
-                                <img src="bericua.jpeg" onerror="this.src='https://placehold.co/80?text=MB'" alt="Marina Bericua" class="speaker-img">
+                                <img src="bericua.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=MB'" alt="Marina Bericua" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Marina Bericua</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Microsoft</p>
                             </div>
-                            <!-- 3. Betroni, Valentín -->
+                            <!-- 15. Betroni, Valentín -->
                             <div class="flex flex-col items-center">
-                                <img src="vbetroni.jfif" onerror="this.src='https://placehold.co/80?text=VB'" alt="Valentín Betroni" class="speaker-img">
+                                <img src="vbetroni.jfif" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=VB'" alt="Valentín Betroni" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Valentín Betroni</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Science Policy Research Unit</p>
                             </div>
-                            <!-- 4. Casas, Pablo -->
+                            <!-- 16. Casas, Pablo -->
                             <div class="flex flex-col items-center">
-                                <img src="casas.jpeg" onerror="this.src='https://placehold.co/80?text=PC'" alt="Pablo Casas" class="speaker-img">
+                                <img src="casas.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=PC'" alt="Pablo Casas" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Pablo Casas</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Poder Judicial</p>
                             </div>
 
-                            <!-- 5. Cavalli, Florencia -->
+                            <!-- 17. Cavalli, Florencia -->
                             <div class="flex flex-col items-center">
-                                <img src="fcavalli.jfif" onerror="this.src='https://placehold.co/80?text=FC'" alt="Florencia Cavalli" class="speaker-img">
+                                <img src="fcavalli.jfif" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=FC'" alt="Florencia Cavalli" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Florencia Cavalli</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Asuntos del Sur</p>
                             </div>
 
-                            <!-- 6. Cavanna, Santiago -->
+                            <!-- 18. Cavanna, Santiago -->
                             <div class="flex flex-col items-center">
-                                <img src="scavanna.jfif" onerror="this.src='https://placehold.co/80?text=SC'" alt="Santiago Cavanna" class="speaker-img">
+                                <img src="scavanna.jfif" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=SC'" alt="Santiago Cavanna" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Santiago Cavanna</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Microsoft</p>
                             </div>
 
-                            <!-- 7. Cella, Julio -->
+                            <!-- 19. Cella, Julio -->
                             <div class="flex flex-col items-center">
-                                <img src="cella.jpeg" onerror="this.src='https://placehold.co/80?text=JC'" alt="Julio Cella" class="speaker-img">
+                                <img src="cella.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=JC'" alt="Julio Cella" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Julio Cella</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">IBM</p>
                             </div>
-                            <!-- 8. Colodenco, Tamar -->
+                            <!-- 20. Colodenco, Tamar -->
                             <div class="flex flex-col items-center">
-                                <img src="tamar.jpeg" onerror="this.src='https://placehold.co/80?text=TC'" alt="Tamar Colodenco" class="speaker-img">
+                                <img src="tamar.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=TC'" alt="Tamar Colodenco" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Tamar Colodenco</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Google</p>
                             </div>
 
-                            <!-- 9. De Anchorena, Beatriz -->
+                            <!-- 21. De Anchorena, Beatriz -->
                             <div class="flex flex-col items-center">
-                                <img src="beatriz_370x280.jpg" onerror="this.src='https://placehold.co/80?text=BA'" alt="Beatriz de Anchorena" class="speaker-img">
+                                <img src="beatriz_370x280.jpg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=BA'" alt="Beatriz de Anchorena" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Beatriz de Anchorena</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Agencia de Acceso a la Información Pública</p>
                             </div>
 
-                            <!-- 10. Estrada, Miguel Ignacio -->
+                            <!-- 22. Estrada, Miguel Ignacio -->
                             <div class="flex flex-col items-center">
-                                <img src="estrada.jpeg" onerror="this.src='https://placehold.co/80?text=ME'" alt="Miguel Ignacio Estrada" class="speaker-img">
+                                <img src="estrada.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=ME'" alt="Miguel Ignacio Estrada" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Miguel Ignacio Estrada</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">LACNIC</p>
                             </div>
 
-                            <!-- 11. Gendler, Martín -->
+                            <!-- 23. Gendler, Martín -->
                             <div class="flex flex-col items-center">
-                                <img src="gendler.jpeg" onerror="this.src='https://placehold.co/80?text=MG'" alt="Martín Gendler" class="speaker-img">
+                                <img src="gendler.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=MG'" alt="Martín Gendler" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Martín Gendler</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">CONICET</p>
                             </div>
-                            <!-- 12. Illuminati, Tomás -->
+                            <!-- 24. Illuminati, Tomás -->
                             <div class="flex flex-col items-center">
-                                <img src="illuminati.jpeg" onerror="this.src='https://placehold.co/80?text=TI'" alt="Tomás Illuminati" class="speaker-img">
+                                <img src="illuminati.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=TI'" alt="Tomás Illuminati" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Tomás Illuminati</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Ciberseguridad en Sector Público</p>
                             </div>
-                            <!-- 13. Kampel, Julia -->
+                            <!-- 25. Kampel, Julia -->
                             <div class="flex flex-col items-center">
-                                <img src="kampel.jpeg" onerror="this.src='https://placehold.co/80?text=JK'" alt="Julia Kampel" class="speaker-img">
+                                <img src="kampel.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=JK'" alt="Julia Kampel" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Julia Kampel</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Young AI Leaders: BA Hub</p>
                             </div>
-                            <!-- 14. Marinangeli, Juan Martín -->
+                            <!-- 26. Marinangeli, Juan Martín -->
                             <div class="flex flex-col items-center">
-                                <img src="marinangeli.jpeg" onerror="this.src='https://placehold.co/80?text=JM'" alt="Juan Martín Marinangeli" class="speaker-img">
+                                <img src="marinangeli.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=JM'" alt="Juan Martín Marinangeli" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Juan M. Marinangeli</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">UdeSA</p>
                             </div>
 
-                            <!-- 15. Martinez Ledesma, Delfina -->
+                            <!-- 27. Martinez Ledesma, Delfina -->
                             <div class="flex flex-col items-center">
-                                <img src="martinezledesma.jfif" onerror="this.src='https://placehold.co/80?text=DML'" alt="Delfina Martinez Ledesma" class="speaker-img">
+                                <img src="martinezledesma.jfif" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=DML'" alt="Delfina Martinez Ledesma" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Delfina Martinez Ledesma</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Tools for Humanity</p>
                             </div>
 
-                            <!-- 16. Ordoñez, Mauro -->
+                            <!-- 28. Ordoñez, Mauro -->
                             <div class="flex flex-col items-center">
-                                <img src="mauroo.jpeg" onerror="this.src='https://placehold.co/80?text=MO'" alt="Mauro Ordoñez" class="speaker-img">
+                                <img src="mauroo.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=MO'" alt="Mauro Ordoñez" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Mauro Ordoñez</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Bitcoin Argentina</p>
                             </div>
 
-                            <!-- 17. Pallero, Javier -->
+                            <!-- 29. Pallero, Javier -->
                             <div class="flex flex-col items-center">
-                                <img src="pallero.jpeg" onerror="this.src='https://placehold.co/80?text=JP'" alt="Javier Pallero" class="speaker-img">
+                                <img src="pallero.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=JP'" alt="Javier Pallero" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Javier Pallero</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Consultor Independiente</p>
                             </div>
 
-                            <!-- 18. Segura, Pablo -->
+                            <!-- 30. Segura, Pablo -->
                             <div class="flex flex-col items-center">
-                                <img src="pablo_segura.jpg" onerror="this.src='https://placehold.co/80?text=PS'" alt="Pablo Segura" class="speaker-img">
+                                <img src="pablo_segura.jpg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=PS'" alt="Pablo Segura" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Pablo Segura</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Mercado Libre</p>
                             </div>
 
-                            <!-- 19. Szerman, Paloma -->
+                            <!-- 31. Szerman, Paloma -->
                             <div class="flex flex-col items-center">
-                                <img src="szerman.jpeg" onerror="this.src='https://placehold.co/80?text=PS'" alt="Paloma Szerman" class="speaker-img">
+                                <img src="szerman.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=PS'" alt="Paloma Szerman" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Paloma Szerman</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Mercado Libre</p>
                             </div>
-                            <!-- 20. Trione, María -->
+                            <!-- 32. Trione, María -->
                             <div class="flex flex-col items-center">
-                                <img src="trione.jpeg" onerror="this.src='https://placehold.co/80?text=MT'" alt="María Trione" class="speaker-img">
+                                <img src="trione.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=MT'" alt="María Trione" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">María Trione</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Criando en Digital</p>
                             </div>
-                            <!-- 21. Trovato, Margarita -->
+                            <!-- 33. Trovato, Margarita -->
                             <div class="flex flex-col items-center">
-                                <img src="trovato.jpeg" onerror="this.src='https://placehold.co/80?text=MT'" alt="Margarita Trovato" class="speaker-img">
+                                <img src="trovato.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=MT'" alt="Margarita Trovato" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Margarita Trovato</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Wikimedia Argentina</p>
                             </div>
 
-                            <!-- 22. Zuazo, Natalia -->
+                            <!-- 34. Zuazo, Natalia -->
                             <div class="flex flex-col items-center">
-                                <img src="foto_nataliazuazo_horizontal.jpg" onerror="this.src='https://placehold.co/80?text=NZ'" alt="Natalia Zuazo" class="speaker-img">
+                                <img src="foto_nataliazuazo_horizontal.jpg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/0569a5/FFFFFF?text=NZ'" alt="Natalia Zuazo" class="speaker-img">
                                 <p class="font-bold text-gray-800 leading-tight">Natalia Zuazo</p>
                                 <p class="text-[10px] text-gray-500 leading-tight mt-1">Agencia Salto</p>
                             </div>
@@ -780,13 +782,13 @@
             <div class="container mx-auto px-6">
                 <div class="flex flex-wrap justify-center items-center gap-8">
                     <a href="https://lacigf.org/" target="_blank" rel="noopener noreferrer" class="block p-4">
-                        <img src="logo-lacigf.svg" onerror="this.src='https://placehold.co/150x80?text=LACIGF'" alt="Logo LACIGF" class="h-20 hover:opacity-80 transition-opacity duration-300">
+                        <img src="logo-lacigf.svg" onerror="this.onerror=null;this.src='https://placehold.co/150x80/F3F4F6/0569a5?text=LACIGF'" alt="Logo LACIGF" class="h-20 hover:opacity-80 transition-opacity duration-300">
                     </a>
                     <a href="https://intgovforum.org/" target="_blank" rel="noopener noreferrer" class="block p-4">
-                        <img src="igflogo2.png" onerror="this.src='https://placehold.co/150x80?text=IGF+Global'" alt="Logo IGF Global" class="h-20 hover:opacity-80 transition-opacity duration-300">
+                        <img src="igflogo2.png" onerror="this.onerror=null;this.src='https://placehold.co/150x80/F3F4F6/0569a5?text=IGF+Global'" alt="Logo IGF Global" class="h-20 hover:opacity-80 transition-opacity duration-300">
                     </a>
                     <a href="https://www.un.org/" target="_blank" rel="noopener noreferrer" class="block p-4">
-                        <img src="un-logo.png" onerror="this.src='https://placehold.co/150x80?text=UN'" alt="Logo Naciones Unidas" class="h-20 hover:opacity-80 transition-opacity duration-300">
+                        <img src="un-logo.png" onerror="this.onerror=null;this.src='https://placehold.co/150x80/F3F4F6/0569a5?text=UN'" alt="Logo Naciones Unidas" class="h-20 hover:opacity-80 transition-opacity duration-300">
                     </a>
                 </div>
             </div>
@@ -800,99 +802,87 @@
             <div class="grid md:grid-cols-2 gap-8 text-center md:text-left">
                 <div>
                     <h3 class="font-bold text-lg mb-4">IGF Argentina</h3>
-                    <p class="text-gray-400">Promoviendo un diálogo abierto y constructivo sobre el futuro de Internet para el desarrollo sostenible de Argentina.</p>
+                    <p class="text-gray-400 max-w-md">Promoviendo un diálogo abierto y constructivo sobre el futuro de Internet para el desarrollo sostenible de Argentina.</p>
                 </div>
                 <div class="md:text-right flex flex-col items-center md:items-end justify-center">
                     <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/igfargentina/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.youtube.com/@IGFArgentina" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/in/igfargentina/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition text-2xl" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/@IGFArgentina" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition text-2xl" title="YouTube"><i class="fab fa-youtube"></i></a>
                         <!-- Botón de contacto que copia el email -->
                         <button onclick="copyToClipboard('argentinaigf@gmail.com')" class="text-gray-400 hover:text-white transition text-2xl focus:outline-none" title="Copiar email de contacto">
                             <i class="fas fa-envelope"></i>
                         </button>
-                        <a href="https://www.instagram.com/igfargentina" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-instagram"></i></a>
-                        <a href="https://linktr.ee/igfargentina" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition text-2xl"><i class="fas fa-link"></i></a>
+                        <a href="https://www.instagram.com/igfargentina" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition text-2xl" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linktr.ee/igfargentina" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition text-2xl" title="Linktree"><i class="fas fa-link"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE CONVOCATORIA -->
-    <button id="btn-open-convocatoria" class="fixed bottom-5 left-5 z-40 bg-cyan-400 text-primary font-extrabold py-3 px-5 rounded-full shadow-2xl hover:bg-cyan-300 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 border-2 border-cyan-500 hidden opacity-0 translate-y-10">
-        <i class="fas fa-bullhorn animate-pulse"></i>
-        <span class="hidden md:inline">Proponer Temas 2026</span>
-        <span class="md:hidden">Convocatoria</span>
-    </button>
-
-    <!-- MODAL CONVOCATORIA 2026 -->
-    <div id="convocatoria-modal" class="fixed inset-0 bg-black bg-opacity-80 z-[60] flex items-center justify-center p-4 hidden modal-enter">
-        <div class="bg-white rounded-3xl shadow-2xl w-full max-w-3xl mx-auto max-h-[90vh] flex flex-col overflow-hidden relative">
-            <!-- Botón Cerrar -->
-            <button id="close-convocatoria-btn" class="absolute top-4 right-4 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-full w-10 h-10 flex items-center justify-center transition-colors z-10 focus:outline-none">
-                <i class="fas fa-times text-xl"></i>
+    <!-- MODAL INFORMATIVO: FECHA TENTATIVA JORNADA PRESENCIAL -->
+    <div id="fecha-modal" class="fixed inset-0 bg-black/75 z-[60] flex items-center justify-center p-4 hidden modal-enter">
+        <div class="bg-white rounded-3xl shadow-2xl w-full max-w-lg mx-auto overflow-hidden relative border border-blue-100">
+            <!-- Botón Cerrar Superior -->
+            <button id="close-fecha-btn" class="absolute top-4 right-4 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-full w-9 h-9 flex items-center justify-center transition-colors z-10 focus:outline-none" aria-label="Cerrar aviso">
+                <i class="fas fa-times text-base"></i>
             </button>
             
-            <div class="overflow-y-auto p-6 md:p-10">
-                <div class="text-center mb-8">
-                    <div class="inline-block bg-cyan-100 text-cyan-800 px-4 py-1.5 rounded-full text-sm font-bold tracking-wide mb-4 border border-cyan-200 shadow-sm">
-                        📢 Convocatoria Abierta 2026
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-primary leading-tight mb-4">¡Construí la agenda del IGF Argentina 2026!</h2>
-                    <p class="text-lg text-gray-600 font-medium">Compartí tus propuestas y prioridades para definir los temas que marcarán el debate sobre gobernanza de Internet y políticas digitales en Argentina durante este año.</p>
+            <div class="p-8 md:p-9 text-center">
+                <!-- Ícono Calendario Destacado -->
+                <div class="w-16 h-16 bg-blue-50 text-primary rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-inner">
+                    <i class="fas fa-calendar-alt text-3xl"></i>
                 </div>
-
-                <hr class="border-gray-200 mb-8">
-
-                <div class="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
-                    <h3 class="text-xl font-bold text-gray-800">Convocatoria Abierta de Temáticas</h3>
-                    <p>El Foro de Gobernanza de Internet de Argentina (IGF Argentina) abrió la convocatoria para recibir las prioridades y propuestas de temáticas que contribuyan a definir la agenda de trabajo y el programa de actividades de la edición 2026.</p>
-                    <p>La iniciativa está dirigida a representantes de gobierno, sector privado, comunidad técnica, academia, sociedad civil, periodistas, estudiantes y todas las personas interesadas en el desarrollo de Internet y las políticas digitales.</p>
-                    <p>El objetivo de esta consulta es identificar los principales desafíos, oportunidades y prioridades del ecosistema digital argentino, promoviendo una construcción participativa y multisectorial de la agenda del IGF Argentina.</p>
-                    
-                    <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 mt-6">
-                        <h4 class="font-bold text-gray-800 mb-4">Las propuestas podrán abordar, entre otros temas:</h4>
-                        <ul class="list-disc pl-6 space-y-2 text-gray-600 font-medium grid md:grid-cols-2 gap-x-4">
-                            <li>Inteligencia Artificial y gobernanza de la IA.</li>
-                            <li>Ciberseguridad y resiliencia digital.</li>
-                            <li>Gobernanza y protección de datos.</li>
-                            <li>Derechos humanos en entornos digitales.</li>
-                            <li>Medios, información y plataformas digitales.</li>
-                            <li>Inclusión digital y conectividad.</li>
-                            <li>Economía digital e innovación.</li>
-                            <li>Tecnologías emergentes.</li>
-                            <li>Cooperación digital y gobernanza global.</li>
-                            <li>Sostenibilidad y tecnología.</li>
-                        </ul>
-                    </div>
-
-                    <p class="pt-4">Las contribuciones servirán para la definición de los ejes temáticos, actividades preparatorias y sesiones que integrarán el proceso del IGF Argentina 2026.</p>
-                    <p class="font-bold text-primary">Invitamos a toda la comunidad a participar y aportar su visión sobre los temas que deberían formar parte de la conversación nacional sobre el futuro digital.</p>
+                
+                <div class="inline-flex items-center gap-1.5 bg-amber-50 text-amber-800 border border-amber-200 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">
+                    <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+                    Fecha Tentativa
                 </div>
+                
+                <h3 class="text-2xl md:text-3xl font-extrabold text-primary mb-2 leading-tight">
+                    Jornada Anual Presencial
+                </h3>
+                
+                <p class="text-gray-500 text-sm font-medium mb-5">
+                    Foro de Gobernanza de Internet Argentina
+                </p>
 
-                <div class="mt-8 pt-6 border-t border-gray-100 text-center">
-                    <a href="https://forms.gle/vLLhQs3nZAt4pYbX6" target="_blank" rel="noopener noreferrer" class="inline-block w-full md:w-auto bg-primary hover:bg-primary-dark text-white font-extrabold text-lg py-4 px-8 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1">
-                        <i class="fab fa-wpforms mr-2"></i> Completar Formulario
-                    </a>
+                <!-- Tarjeta con la fecha destacada -->
+                <div class="bg-gradient-to-br from-blue-50/70 to-slate-50 border border-blue-100 rounded-2xl p-5 mb-5 shadow-sm">
+                    <span class="text-xs font-bold uppercase text-primary tracking-widest block mb-1">Reserva la fecha</span>
+                    <p class="text-3xl md:text-4xl font-black text-gray-800 tracking-tight">
+                        20 de Octubre
+                    </p>
+                    <span class="inline-block mt-2 text-xs font-semibold text-amber-700 bg-amber-100/70 px-2.5 py-0.5 rounded-full">
+                        (Será confirmada próximamente)
+                    </span>
                 </div>
+                
+                <p class="text-xs md:text-sm text-gray-600 leading-relaxed max-w-sm mx-auto mb-6">
+                    Te invitamos a agendar la fecha tentativa. Próximamente brindaremos más información sobre sede, agenda e inscripción.
+                </p>
+                
+                <button id="btn-entendido-fecha" class="w-full bg-primary hover:bg-primary-dark text-white font-extrabold py-3.5 px-6 rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 ring-primary">
+                    Entendido
+                </button>
             </div>
         </div>
     </div>
 
-    <!-- MODALES -->
+    <!-- MODAL SECTORES / COMITÉ -->
     <div id="sector-modal" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 hidden modal-enter">
-        <div class="bg-white rounded-lg shadow-2xl w-full max-w-4xl mx-auto max-h-[90vh] overflow-y-auto">
-            <div class="p-6">
-                <div class="flex justify-between items-center mb-6">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl mx-auto max-h-[90vh] overflow-y-auto">
+            <div class="p-6 md:p-8">
+                <div class="flex justify-between items-center mb-6 border-b border-gray-100 pb-4">
                     <h3 id="modal-title" class="text-2xl font-bold text-gray-800"></h3>
-                    <button id="modal-close-btn" class="text-gray-400 hover:text-gray-600 transition text-3xl leading-none">&times;</button>
+                    <button id="modal-close-btn" class="text-gray-400 hover:text-gray-600 transition text-3xl leading-none" aria-label="Cerrar">&times;</button>
                 </div>
                 <div id="modal-body" class="flex flex-wrap justify-center gap-6"></div>
             </div>
         </div>
     </div>
 
-    <!-- POPUP PEQUEÑO TOAST NOTIFICATION -->
+    <!-- TOAST NOTIFICATION -->
     <div id="toast-notification" class="fixed bottom-5 right-5 bg-emerald-600 text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300 z-50 hidden">
         <i class="fas fa-check-circle text-lg text-green-300"></i>
         <span id="toast-message" class="font-bold text-sm"></span>
@@ -941,9 +931,11 @@
         document.addEventListener('DOMContentLoaded', () => {
             const menuBtn = document.getElementById('menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
-            menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
-            const mobileLinks = document.querySelectorAll('#mobile-menu a');
-            mobileLinks.forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); });
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+                const mobileLinks = document.querySelectorAll('#mobile-menu a');
+                mobileLinks.forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); });
+            }
 
             const sectorCards = document.querySelectorAll('.sector-card');
             const sectorModal = document.getElementById('sector-modal');
@@ -1004,15 +996,16 @@
                 modalTitle.textContent = data.title;
                 modalBody.innerHTML = '';
                 if (data.members.length === 0) { 
-                    modalBody.innerHTML = '<p class="col-span-full text-center text-gray-500">No hay representantes listados.</p>'; 
+                    modalBody.innerHTML = '<p class="col-span-full text-center text-gray-500 py-6">No hay representantes listados.</p>'; 
                 } else {
                     data.members.forEach(member => {
+                        const initials = encodeURIComponent(member.name.split(' ').map(n=>n[0]).join(''));
                         const memberCard = `
-                            <div class="text-center p-4 border border-gray-200 rounded-lg w-64 bg-white shadow-sm flex flex-col items-center">
-                                <img src="${member.imageUrl}" alt="Foto de ${member.name}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/200x200/E2E8F0/4A5568?text=${encodeURIComponent(member.name.split(' ').map(n=>n[0]).join(''))}';">
+                            <div class="text-center p-5 border border-gray-200 rounded-xl w-64 bg-white shadow-sm flex flex-col items-center">
+                                <img src="${member.imageUrl}" alt="Foto de ${member.name}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-gray-50 shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/200x200/0569a5/FFFFFF?text=${initials}';">
                                 <h4 class="font-bold text-lg text-gray-800">${member.name}</h4>
                                 ${member.title ? `<p class="text-sm text-gray-500 mb-3 min-h-[20px]">${member.title}</p>` : '<div class="mb-3 min-h-[20px]"></div>'}
-                                ${member.linkedinUrl !== '#' ? `<a href="${member.linkedinUrl}" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-blue-700 transition text-2xl"><i class="fab fa-linkedin"></i></a>` : ''}
+                                ${member.linkedinUrl !== '#' ? `<a href="${member.linkedinUrl}" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-blue-700 transition text-2xl" aria-label="LinkedIn de ${member.name}"><i class="fab fa-linkedin"></i></a>` : ''}
                             </div>
                         `;
                         modalBody.innerHTML += memberCard;
@@ -1032,21 +1025,17 @@
             };
 
             sectorCards.forEach(card => card.addEventListener('click', () => openSectorModal(card.getAttribute('data-sector'))));
-            closeModalBtn.addEventListener('click', closeSectorModal);
-            sectorModal.addEventListener('click', (event) => { if (event.target === sectorModal) closeSectorModal(); });
+            if (closeModalBtn) closeModalBtn.addEventListener('click', closeSectorModal);
+            if (sectorModal) {
+                sectorModal.addEventListener('click', (event) => { if (event.target === sectorModal) closeSectorModal(); });
+            }
 
-            document.addEventListener('keydown', (event) => {
-                if (event.key === 'Escape') {
-                    if (!sectorModal.classList.contains('hidden')) closeSectorModal();
-                }
-            });
-
-            // Lógica para el toggle de Participantes Jornada
+            // Toggle Participantes Jornada
             const toggleBtn = document.getElementById('toggle-participantes');
             const content = document.getElementById('participantes-content');
             const icon = document.getElementById('chevron-icon');
 
-            if (toggleBtn) {
+            if (toggleBtn && content && icon) {
                 toggleBtn.addEventListener('click', () => {
                     content.classList.toggle('hidden');
                     if (content.classList.contains('hidden')) {
@@ -1057,12 +1046,12 @@
                 });
             }
 
-            // Lógica para el toggle de Videos Jornadas
+            // Toggle Videos Jornadas
             const toggleVideosBtn = document.getElementById('toggle-videos');
             const videosContent = document.getElementById('videos-content');
             const videoIcon = document.getElementById('chevron-icon-videos');
 
-            if (toggleVideosBtn) {
+            if (toggleVideosBtn && videosContent && videoIcon) {
                 toggleVideosBtn.addEventListener('click', () => {
                     videosContent.classList.toggle('hidden');
                     if (videosContent.classList.contains('hidden')) {
@@ -1073,60 +1062,47 @@
                 });
             }
 
-            // --- LÓGICA PARA EL MODAL DE CONVOCATORIA ---
-            const convocatoriaModal = document.getElementById('convocatoria-modal');
-            const closeConvocatoriaBtn = document.getElementById('close-convocatoria-btn');
-            const btnOpenConvocatoria = document.getElementById('btn-open-convocatoria');
-            
-            // Función para abrir el modal de convocatoria
-            const openConvocatoria = () => {
-                convocatoriaModal.classList.remove('hidden');
-                setTimeout(() => convocatoriaModal.classList.add('modal-enter-active'), 10);
-                
-                // Ocultar botón flotante cuando el modal está abierto
-                btnOpenConvocatoria.classList.remove('opacity-100', 'translate-y-0');
-                btnOpenConvocatoria.classList.add('opacity-0', 'translate-y-10');
-                setTimeout(() => btnOpenConvocatoria.classList.add('hidden'), 300);
+            // --- LÓGICA MODAL FECHA TENTATIVA ---
+            const fechaModal = document.getElementById('fecha-modal');
+            const closeFechaBtn = document.getElementById('close-fecha-btn');
+            const btnEntendidoFecha = document.getElementById('btn-entendido-fecha');
+
+            const openFechaModal = () => {
+                if (!fechaModal) return;
+                fechaModal.classList.remove('hidden');
+                setTimeout(() => fechaModal.classList.add('modal-enter-active'), 10);
             };
 
-            // Función para cerrar el modal de convocatoria
-            const closeConvocatoria = () => {
-                convocatoriaModal.classList.remove('modal-enter-active');
-                convocatoriaModal.classList.add('modal-leave-active');
-                setTimeout(() => { 
-                    convocatoriaModal.classList.add('hidden'); 
-                    convocatoriaModal.classList.remove('modal-leave-active'); 
-                }, 200);
-
-                // Mostrar botón flotante
-                btnOpenConvocatoria.classList.remove('hidden');
-                // Pequeño timeout para permitir que el display:block se aplique antes de animar opacidad
+            const closeFechaModal = () => {
+                if (!fechaModal) return;
+                fechaModal.classList.remove('modal-enter-active');
+                fechaModal.classList.add('modal-leave-active');
                 setTimeout(() => {
-                    btnOpenConvocatoria.classList.remove('opacity-0', 'translate-y-10');
-                    btnOpenConvocatoria.classList.add('opacity-100', 'translate-y-0');
-                }, 10);
+                    fechaModal.classList.add('hidden');
+                    fechaModal.classList.remove('modal-leave-active');
+                }, 200);
             };
 
-            if (convocatoriaModal && closeConvocatoriaBtn && btnOpenConvocatoria) {
-                // Mostrar automáticamente el popup al cargar la página (con un delay de 800ms para mejor UX)
-                setTimeout(openConvocatoria, 800);
+            if (fechaModal) {
+                // Apertura automática 700ms luego de cargar la web
+                setTimeout(openFechaModal, 700);
 
-                closeConvocatoriaBtn.addEventListener('click', closeConvocatoria);
-                btnOpenConvocatoria.addEventListener('click', openConvocatoria);
-                
-                // Cerrar al hacer clic en el fondo negro
-                convocatoriaModal.addEventListener('click', (event) => { 
-                    if (event.target === convocatoriaModal) closeConvocatoria(); 
-                });
+                if (closeFechaBtn) closeFechaBtn.addEventListener('click', closeFechaModal);
+                if (btnEntendidoFecha) btnEntendidoFecha.addEventListener('click', closeFechaModal);
 
-                document.addEventListener('keydown', (event) => {
-                    if (event.key === 'Escape' && !convocatoriaModal.classList.contains('hidden')) {
-                        closeConvocatoria();
-                    }
+                // Cierre haciendo clic fuera del modal
+                fechaModal.addEventListener('click', (e) => {
+                    if (e.target === fechaModal) closeFechaModal();
                 });
             }
-            // --- FIN LÓGICA CONVOCATORIA ---
 
+            // Manejo global de tecla Escape para todos los modales
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    if (fechaModal && !fechaModal.classList.contains('hidden')) closeFechaModal();
+                    if (sectorModal && !sectorModal.classList.contains('hidden')) closeSectorModal();
+                }
+            });
         });
     </script>
 
