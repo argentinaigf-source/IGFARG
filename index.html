@@ -893,13 +893,13 @@
                     </div>
                 </div>
 
-                <!-- SECCIÓN DE CONVOCATORIAS Y FORMULARIOS (Modular y escalable) -->
+                <!-- SECCIÓN DE CONVOCATORIAS Y FORMULARIOS -->
                 <div class="space-y-3 mb-6">
                     <h4 class="text-xs font-bold uppercase tracking-wider text-gray-500 text-center">
                         Accesos y Formularios
                     </h4>
                     
-                    <!-- 1. Formulario Panelistas (ACTIVO) -->
+                    <!-- 1. Formulario Panelistas (ACTIVO) con URL actualizado -->
                     <div class="bg-blue-50/70 border-2 border-primary/30 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-sm">
                         <div class="text-center sm:text-left">
                             <div class="flex items-center justify-center sm:justify-start gap-2">
@@ -908,7 +908,7 @@
                             </div>
                             <p class="text-xs text-gray-600 mt-0.5">Postulate indicando tu experiencia, organización y temática de interés.</p>
                         </div>
-                        <a href="https://forms.gle/Reazt4A6zMftKH1h7" id="btn-form-panelistas" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto shrink-0 bg-primary hover:bg-primary-dark text-white font-bold text-xs md:text-sm py-2.5 px-5 rounded-xl transition-all shadow hover:shadow-md flex items-center justify-center gap-2">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKK9ViGfMIvdF2UPNO2wxhwgNwp8-aZvWp5aqSFuH7-LOlTA/viewform" id="btn-form-panelistas" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto shrink-0 bg-primary hover:bg-primary-dark text-white font-bold text-xs md:text-sm py-2.5 px-5 rounded-xl transition-all shadow hover:shadow-md flex items-center justify-center gap-2">
                             <i class="fas fa-microphone"></i> Formulario de Postulación
                         </a>
                     </div>
@@ -1013,8 +1013,8 @@
             setTimeout(() => {
                 toast.classList.remove('translate-y-0', 'opacity-100');
                 toast.classList.add('translate-y-20', 'opacity-0');
-                setTimeout(() => {
-                    toast.classList.add('hidden');
+                setTimeout(() => { 
+                    toast.classList.add('hidden'); 
                 }, 300);
             }, 3000);
         }
